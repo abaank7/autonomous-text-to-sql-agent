@@ -1,0 +1,26 @@
+sql-agent-project/
+│
+├── backend/                  # FastAPI Application
+│   ├── api.py                # POST /ask endpoint mapping to LangGraph
+│   └── models.py             # Pydantic schemas for request/response validation
+│
+├── frontend/                 # Streamlit Web UI
+│   └── app.py                # Interactive chat interface
+│
+├── graph/                    # Core LangGraph Agent Logic
+│   ├── state.py              # TypedDict state definition
+│   ├── graph_builder.py      # StateGraph compilation and edge routing
+│   ├── nodes/                
+│   │   ├── llm_nodes.py      # Non-deterministic agents (sql_generator, insight_generator)
+│   │   └── tool_nodes.py     # Deterministic tools (get_schema, execute_sql)
+│   └── prompts.py            # Isolated system prompts
+│
+├── database/                 
+│   └── setup_db.py           # Script to generate the local SQLite DB
+│
+├── tests/                    
+│   └── test_graph.py         # Pytest suite for graph state validation
+│
+├── requirements.txt
+├── .env                      # API keys and LangSmith config
+└── README.md

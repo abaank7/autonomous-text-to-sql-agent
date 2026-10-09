@@ -1,0 +1,3 @@
+BACKEND :- uvicorn backend.api:app --reload
+
+FRONTEND:- streamlit run frontend/app.py
